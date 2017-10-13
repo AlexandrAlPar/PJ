@@ -1,0 +1,23 @@
+package ru.mirea.journal;
+
+public class SaveDocException extends Exception{
+
+}
+
+package ru.mirea.journal;
+
+public class SaveUserException extends Exception{
+
+}
+
+package ru.mirea.journal;
+
+public class WrongDocIdException extends Exception {
+
+}
+
+package ru.mirea.journal;
+
+public class WrongUserIdException extends Exception{
+
+}
