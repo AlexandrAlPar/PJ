@@ -1,0 +1,45 @@
+package ru.mirea.journal
+import static org.junit.Assert.*;
+
+public class DoJournalTest {
+    private Journal j = new DoJournal();
+   /** @org.junit.Before
+    public void setUp() throws Exception {
+        super.setUp()
+    }**/
+
+    @org.junit.Test
+    public void TestAddUserAction() throws Exception {
+        //Add user action
+        ActionUser a = ActionUser.USER_CREATED;
+        int u=55555;
+        j.addUserAction(u,a);
+    }
+
+    @org.junit.Test
+    public void TestAddDocumentAction() throws Exception {
+        //Add document action
+        ActionDoc a = ActionDoc.DOCUMENT_CREATED;
+        int u=55555;
+        String s="00000";
+        j.addDocumentAction(u,s,a);
+    }
+
+    @org.junit.Test
+    public void TestGetUserAction() throws Exception {
+        int u = 55555;
+        j.addUserAction(u,ActionUser.USER_CREATED);
+        ActionUser[] text;
+        text=j.getUserAction(u);
+        assertEquals(text,ActionUser.USER_CREATED);
+    }
+
+    @org.junit.Test
+    public void TestGetDocumentAction() throws Exception {
+        String s1="00000";
+        j.addDocumentAction(55555,s1,ActionDoc.DOCUMENT_CREATED)
+        Information[] text1;
+        text1=j.getDocumentAction(s1);
+        assertEquals(text1,ActionDoc.DOCUMENT_CREATED);
+    }
+}
